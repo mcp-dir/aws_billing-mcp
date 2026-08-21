@@ -1,0 +1,17 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.mcp-dir/aws_billing-mcp",
+  "title": "AWS Billing",
+  "description": "AWS Cost Explorer cost, forecast, and anomaly reporting through user-connected IAM credentials.",
+  "version": "0.1.0",
+  "repository": {
+    "url": "https://github.com/mcp-dir/aws_billing-mcp",
+    "source": "github"
+  },
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.mcp.ai/p_aws_billing"
+    }
+  ]
+}

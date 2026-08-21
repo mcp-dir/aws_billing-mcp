@@ -1,0 +1,34 @@
+# Smithery configuration for AWS Billing
+# Schema: https://smithery.ai/docs/build/project-config
+# Remote HTTP MCP — server hosted at https://api.mcp.ai/p_aws_billing
+
+name: aws_billing-mcp
+displayName: "AWS Billing"
+description: >
+  AWS Cost Explorer cost, forecast, and anomaly reporting through user-connected IAM credentials.
+
+version: 0.1.0
+license: MIT
+homepage: https://github.com/mcp-dir/aws_billing-mcp
+repository: https://github.com/mcp-dir/aws_billing-mcp
+
+tags:
+  - aws_billing
+  - brazil
+  - med
+  - horizontal
+  - read-only
+
+# Remote HTTP MCP — sem startCommand local (servidor já hospedado)
+startCommand:
+  type: http
+  url: https://api.mcp.ai/p_aws_billing
+
+auth:
+  type: oauth2
+  resourceMetadataUrl: https://api.mcp.ai/p_aws_billing/.well-known/oauth-protected-resource
+  fallback:
+    type: agent-auth
+    description: >
+      Para clientes sem OAuth 2.1. O agente expõe uma tool authenticate(token).
+      Usuário gera o JWT em https://app.mcp.ai/agent-auth e cola no chat.
